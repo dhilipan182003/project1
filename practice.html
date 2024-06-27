@@ -1,0 +1,77 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <Button onclick="fun('Rock')";>Rock</Button>
+        <Button onclick="fun('Paper')";>Paper</Button>
+        <Button onclick="fun('Sicssors')";>Sicssors</Button>
+
+        <script>
+            let w=0;
+            let d=0;
+            let l=0;
+            let Pmove="";
+            let Cmove="";
+            
+            function fun(Pmove)
+            {
+                let x=Math.random();
+            if(x<1/3)
+            {
+                Cmove='Rock';
+            }
+            else if(x<2/3)
+            {
+                Cmove='Paper';
+            }
+            else{
+                Cmove='Sicssors';
+            }
+                if(Pmove==Cmove)
+                {
+                    console.log("Its A Draw");
+                    d++;
+                }
+                else if(Pmove=='Rock')
+                {
+                    if(Cmove=='Paper')
+                    {
+                        console.log(`Your Move is "${Pmove}" and Computer Move is "${Cmove}", You Lose`);
+                        l++;
+                    }
+                    else{
+                        console.log(`Your Move is "${Pmove}" and Computer Move is "${Cmove}", You Won`);
+                        w++;
+                    }
+                }
+                else if(Pmove=='Paper')
+                {
+                    if(Cmove=='Rock')
+                    {
+                        console.log(`Your Move is "${Pmove}" and Computer Move is "${Cmove}", You Won`);
+                        w++;
+                    }
+                    else{
+                        console.log(`Your Move is "${Pmove}" and Computer Move is "${Cmove}", You Lose`);
+                        l++;
+
+                    }
+                }
+                else{
+                    if(Cmove=='Rock')
+                    {
+                        console.log(`Your Move is "${Pmove}" and Computer Move is "${Cmove}", You Lose`);
+                        l++;
+                    }
+                    else{
+                        console.log(`Your Move is "${Pmove}" and Computer Move is "${Cmove}", You Won`);
+                        w++;
+
+                    }
+                }
+                alert(`W : ${w}, L :${l} , D :${d}`);
+            }
+        </script>
+    </body>
+</html>
